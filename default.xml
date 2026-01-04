@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="aosp" fetch="https://android.googlesource.com/" review="https://android-review.googlesource.com/"/>
+  <remote name="github" fetch="https://github.com/backsofangels/"/>
+
+  <default remote="aosp" revision="refs/tags/android-7.1.2_r36" sync-j="4"/>
+
+  <project path="device/nosferatu" name="NosferatuOS" remote="github" revision="main" />
+  <project path="vendor/nosferatu" name="vendor_device_nosferatu" remote="github" revision="main" />
+
+  <project name="platform/build" path="build" groups="pdk">
+    <copyfile src="core/root.mk" dest="Makefile"/>
+  </project>
+  <project name="platform/build/soong" path="build/soong" groups="pdk,tradefed">
+    <linkfile src="root.bp" dest="Android.bp"/>
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash"/>
+  </project>
+
+  <project name="platform/abi/cpp" path="abi/cpp" groups="pdk"/>
+  <project name="platform/art" path="art" groups="pdk"/>
+  <project name="platform/bionic" path="bionic" groups="pdk"/>
+  <project name="platform/bootable/recovery" path="bootable/recovery" groups="pdk"/>
+
+  <project name="device/common" groups="pdk,pdk-cw-fs"/>
+  <project name="device/generic/common" groups="pdk"/>
+  <project name="device/generic/x86" groups="pdk"/>
+  <project name="device/generic/qemu" groups="pdk"/>
+  <project name="device/generic/goldfish" groups="pdk"/>
+  <project name="device/generic/goldfish-opengl" groups="pdk"/>
+
+  <project name="platform/external/boringssl" path="external/boringssl" groups="pdk"/>
+  <project name="platform/external/bouncycastle" path="external/bouncycastle" groups="pdk"/>
+  <project name="platform/external/clang" path="external/clang" groups="pdk"/>
+  <project name="platform/external/expat" path="external/expat" groups="pdk"/>
+  <project name="platform/external/freetype" path="external/freetype" groups="pdk"/>
+  <project name="platform/external/icu" path="external/icu" groups="pdk"/>
+  <project name="platform/external/libcxx" path="external/libcxx" groups="pdk"/>
+
+  </manifest>
