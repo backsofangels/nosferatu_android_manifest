@@ -25,7 +25,7 @@ We provide a convenient script to handle initialization and synchronization auto
 
 ```bash
 mkdir nosferatu && cd nosferatu
-curl -s [https://raw.githubusercontent.com/backsofangels/nosferatu_android_manifest/main/nos-init.sh](https://raw.githubusercontent.com/backsofangels/nosferatu_android_manifest/main/nos-init.sh)
+curl -s https://raw.githubusercontent.com/backsofangels/nosferatu_android_manifest/main/nos-init.sh
 ```
 
 ### Option 2: Manual Initialization
@@ -34,7 +34,7 @@ If you prefer to run the commands manually:
 
 ```bash
 # Initialize the repository
-repo init -u [https://github.com/backsofangels/nosferatu_android_manifest.git](https://github.com/backsofangels/nosferatu_android_manifest.git) -b main
+repo init -u https://github.com/backsofangels/nosferatu_android_manifest.git -b main
 
 # Sync the source code
 repo sync -c -j$(nproc) --force-sync --no-clone-bundle --no-tags
